@@ -5,7 +5,7 @@ require("dotenv").config();
 const app = express();
 
 app.get("/", (req,res) =>{
-    res.send("app running");
+    res.send("hello app running");
 });
 
-app.listen(process.env.LOCAL_PORT);
+app.listen(80);
