@@ -1,8 +1,7 @@
 // import package for validation
 const joi = require("joi");
 
-// set register validation schema
-    // add trim for whitespaces
+// set register validation schema incl trim for whitespaces
 const registerValidation = (data) => {
     const schemaValidation = joi.object({
         username: joi.string()
