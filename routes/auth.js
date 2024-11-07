@@ -10,6 +10,8 @@ const router = express.Router();
 const User = require("../models/User");
 
 // import user validations
+
+// import registration user validations
 const {registerValidation} = require("../validations/register-validation");
 
 // register api
@@ -18,7 +20,7 @@ router.post("/register", async(req,res)=>{
     // validate user input
     const {error} = registerValidation(req.body);
     if(error){
-        res.status(400).send({message:error["details"][0]["message"]});
+        return res.status(400).send({message:error["details"][0]["message"]});
     };
     
     // check if user exists
@@ -46,6 +48,8 @@ router.post("/register", async(req,res)=>{
         res.status(400).send({message:err});
     };
 });
+
+
 
 // export route to app
 module.exports=router;
