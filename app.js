@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 const authRoute = require("./routes/auth");
 app.use("/api/user", authRoute);
 
+const postRoute = require("./routes/post");
+app.use("/api", postRoute)
+
 
 app.get("/", (req,res) =>{
     res.send("test app running");
